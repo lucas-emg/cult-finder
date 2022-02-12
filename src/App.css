@@ -1,10 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,300;1,700&display=swap");
 
 body {
-  background-color: rgb(61, 61, 61);
+  background-color: rgb(196, 195, 195);
   width: 100vw;
-  height: 100vh;
-  color: white;
+  color: black;
 }
 
 .nav-bar {
@@ -30,4 +30,59 @@ body {
 
 .nav-bar img {
   width: 100px;
+}
+
+/*********Search Page***********/
+
+.search-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 30vh;
+}
+
+.search-header h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+.search-bar {
+  width: 40%;
+}
+
+.search-results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+/************Movie Card*********/
+.movie-card {
+  display: flex;
+  border: 1px rgb(150, 150, 150) solid;
+  width: 40%;
+  height: 200px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  background-color: rgb(204, 204, 204);
+}
+
+.movie-card img {
+  width: 30%;
+  border-radius: 20px 20px 20px 20px;
+}
+
+.movie-card-text {
+  margin-left: 20px;
+  padding: 15px;
+  overflow: hidden;
+  height: 90%;
+}
+
+.text-bold {
+  font-weight: 700;
 }
