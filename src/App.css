@@ -3,6 +3,7 @@
 
 body {
   background-color: rgb(196, 195, 195);
+  min-height: 100vh;
   width: 100vw;
   color: black;
 }
