@@ -4,9 +4,19 @@
 		{
 			"adult": false,
 			"backdrop_path": "/4rsomWxlqnHt3muGYK06auhOib6.jpg",
-			"genre_ids": [
-				10749,
-				18
+			"genres": [
+				{
+					"id": 878,
+					"name": "Science Fiction"
+				},
+				{
+					"id": 53,
+					"name": "Thriller"
+				},
+				{
+					"id": 27,
+					"name": "Horror"
+				}
 			],
 			"id": 818647,
 			"original_language": "es",
