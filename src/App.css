@@ -57,15 +57,21 @@ body {
 
 .search-results {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+}
+
+.movie-results {
+  width: 40%;
+  color: black;
 }
 
 /************Movie Card*********/
 .movie-card {
   display: flex;
   border: 1px rgb(150, 150, 150) solid;
-  width: 40%;
+  width: 100%;
   height: 200px;
   margin-bottom: 20px;
   border-radius: 20px;
