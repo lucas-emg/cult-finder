@@ -5,6 +5,7 @@ import './App.css';
 import Home from './pages/Home';
 import Search from './pages/Search';
 import MyList from './pages/MyList';
+import About from './pages/About';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/search" element={<Search />} />
       <Route path="/mylist" element={<MyList />} />
+      <Route path="/about" element={<About />} />
     </Routes>
     </div>
   );
