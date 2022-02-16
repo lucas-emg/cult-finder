@@ -1,13 +1,23 @@
 import { useState } from 'react'
 import TextField from '@mui/material/TextField';
 import Cards from '../components/Cards';
+import Pagination from '../components/Pagination';
 import moviesList from '../movies.json'
 
 const movies = moviesList.results
 
+
 const Search = () => {
 
-  const [searchTerm, setSearchTerm] = useState('')
+  const [searchTerm, setSearchTerm] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(8);
+
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indextOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = movies.slice(indextOfFirstPost, indexOfLastPost)
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
   return (
     <div>
@@ -20,7 +30,7 @@ const Search = () => {
 
       <div className="search-results">
 
-        {movies.filter((val) => {
+        {currentPosts.filter((val) => {
           if(searchTerm === " ") {
             return val
           } else if (val.title.toLowerCase().includes(searchTerm.toLowerCase())) {
@@ -29,8 +39,10 @@ const Search = () => {
         }).map((movie) => {
           return <Cards poster={"https://image.tmdb.org/t/p/w780/" + movie.poster_path} title={movie.title} release={movie.release_date} sinopsis={movie.overview} />
         })}
-
+        
       </div>
+
+      <Pagination postsPerPage={postsPerPage} totalPosts={movies.length} paginate={paginate} />
     </div>
   )
 }
