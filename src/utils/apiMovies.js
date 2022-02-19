@@ -48,6 +48,28 @@ class apiMovies {
         throw new Error ("Could not fetch the letter searched")
       }
     }
+
+    getOnemovie = async (id) => {
+      try {
+        const {data} = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=6774c2e6f6d436c76de285ed46784876&language=en-US`)
+        return data
+      } catch {
+        throw new Error ("Could not fetch this movie")
+      }
+    }
+
+    getSearchMovies = async (search) => {
+      try {
+        const { data } = await this.api(`/movie`, 
+        {params: {
+          ...this.params,
+          query: search,}
+        })
+        return data
+      } catch {
+        throw new Error ("Could not fetch the search")
+      }
+    }
 }
 
 export default new apiMovies()

@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import apiMovies from '../utils/apiMovies'
 import Button from '@mui/material/Button';
+import CircularProgress from '@mui/material/CircularProgress';
 
 const RandomMovie = () => {
 
@@ -9,9 +10,18 @@ const RandomMovie = () => {
   const [loading, setLoading] = useState(false)
 
   const handleRandomMovie = async () => {
+    setLoading(true)
+    try {
       const data = await apiMovies.getRandomMovie()
-
       setRandomMovie(data)
+    } catch(error) {
+      console.log(error.response)
+    } finally {
+      setLoading(false)
+    }
+      
+
+      
   }
 
   useEffect(() => {
@@ -24,10 +34,14 @@ const RandomMovie = () => {
 
     <h2>Movie suggestion of the day!</h2>
 
+    
     <Link className="random-container" to={"/movie/" + randomMovie.id}>
 
+    
     <div className="random-movie-card">
-
+    {loading
+    ? <CircularProgress className="loading" />
+      : <>
       { randomMovie.poster_path
         ? <img src={"https://image.tmdb.org/t/p/w780/" + randomMovie.poster_path} alt="Movie Poster"/>
         : <img src="https://www.prokerala.com/movies/assets/img/no-poster-available.jpg" alt="Movie Poster"/>}
@@ -40,9 +54,8 @@ const RandomMovie = () => {
         { randomMovie.release_date
           ? <p><span className="text-bold">Release</span>: {randomMovie.release_date}</p>
           : <p><span className="text-bold">Release</span>: No release date available</p>}
-        
-      </div>
-    
+      </div></>
+    }
     </div>
     </Link>
     <Button onClick={handleRandomMovie} variant="contained">Get a new suggestion!</Button>
