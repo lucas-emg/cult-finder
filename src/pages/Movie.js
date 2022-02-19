@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import axios from 'axios'
+import apiMovies from "../utils/apiMovies"
 
 
 const Movie = () => {
@@ -9,15 +10,22 @@ const Movie = () => {
 
     const {id} = useParams()
 
+    const handleGetOneMovie = async () => {
+      const data = await apiMovies.getOnemovie(id)
+      setMovie(data)
+    }
+
     
    useEffect(() =>{ 
-       
-    const getOnemovie = async () => {
-        const {data} = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=6774c2e6f6d436c76de285ed46784876&language=en-US`)
-        setMovie(data)
+    handleGetOneMovie()
+       // const getOnemovie = async () => {
+    //     const {data} = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=6774c2e6f6d436c76de285ed46784876&language=en-US`)
+    //     setMovie(data)
         
-      }
-      getOnemovie()
+    //   }
+    //   getOnemovie()
+
+    console.log(movie)
       
     }, [id])
 
