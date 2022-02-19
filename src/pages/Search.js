@@ -21,6 +21,7 @@ const Search = () => {
   const paginate = (pageNumber) => setCurrentPage(pageNumber)
 
   return (
+    
     <div>
       <div className="search-header">
 
@@ -38,12 +39,12 @@ const Search = () => {
             return val
           }
         }).map((movie) => {
-          return <Link className="movie-results" to={"/movie/" + movie.id}><Cards poster={"https://image.tmdb.org/t/p/w780/" + movie.poster_path} title={movie.title} release={movie.release_date} sinopsis={movie.overview} /></Link>
+          return <Link className="movie-results" to={"/movie/" + movie.id}><Cards key={movie.id} poster={"https://image.tmdb.org/t/p/w780/" + movie.poster_path} title={movie.title} release={movie.release_date} sinopsis={movie.overview} /></Link>
         })}
         
       </div>
 
-      <Pagination postsPerPage={postsPerPage} totalPosts={movies.length} paginate={paginate} />
+      <Pagination key={paginate} postsPerPage={postsPerPage} totalPosts={movies.length} paginate={paginate} />
     </div>
   )
 }
