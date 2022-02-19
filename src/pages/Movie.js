@@ -17,16 +17,7 @@ const Movie = () => {
 
     
    useEffect(() =>{ 
-    handleGetOneMovie()
-       // const getOnemovie = async () => {
-    //     const {data} = await axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=6774c2e6f6d436c76de285ed46784876&language=en-US`)
-    //     setMovie(data)
-        
-    //   }
-    //   getOnemovie()
-
-    console.log(movie)
-      
+    handleGetOneMovie()      
     }, [id])
 
     
