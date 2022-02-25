@@ -58,7 +58,7 @@ const RandomMovie = () => {
     }
     </div>
     </Link>
-    <Button className="random-movie-btn" onClick={handleRandomMovie} variant="outlined">Get a new suggestion!</Button>
+    <button className="random-movie-btn" onClick={handleRandomMovie} variant="outlined">Get a new suggestion!</button>
       
     </div>
   )

@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,300;1,700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Sarabun&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@100&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,300;0,400;1,800;1,100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
 
 body {
@@ -12,7 +10,15 @@ body {
   color: white;
 }
 
+.logo {
+  color: #fcffd3;
+}
+
 .nav-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 65px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -25,12 +31,22 @@ body {
   border-bottom: 1px solid #fcffd3;
 }
 
-.nav-links {
+.nav-logo {
   font-family: "Comfortaa", cursive;
   color: #fcf7ff;
 }
 
-nav-links:hover {
+.nav-logo:hover {
+  color: antiquewhite;
+}
+
+.nav-links {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 500;
+  color: #fcf7ff;
+}
+
+.nav-links:hover {
   color: antiquewhite;
 }
 
@@ -41,8 +57,8 @@ nav-links:hover {
 /**********Header**********/
 
 .header {
-  margin-top: 60px;
   margin-bottom: 0px;
+  padding-top: 60px;
 }
 
 .header h1 {
@@ -70,6 +86,7 @@ nav-links:hover {
   color: rgb(49, 46, 54);
   font-family: "Sarabun", sans-serif;
   font-weight: 100;
+  font-style: italic;
 }
 
 /*********Random Movie***********/
@@ -110,6 +127,14 @@ nav-links:hover {
   color: white;
   overflow: scroll;
   background-color: #6b6b6b;
+  transition: 0.2s;
+}
+
+.random-movie-card:hover {
+  background-color: #7a7a7a;
+  border: 3px solid #fcffd3;
+  transition: 0.2s;
+  border-radius: 24px;
 }
 
 .loading {
@@ -129,7 +154,24 @@ nav-links:hover {
 }
 
 .random-movie-btn {
-  margin-top: -100px;
+  border: none;
+  padding: 18px;
+  background-color: #fcffd3;
+  height: 70px;
+  border-radius: 10px;
+  font-family: "Sarabun", sans-serif;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.random-movie-btn:hover {
+  background-color: #f9ff9e;
+  transition: 0.2s;
 }
 
 .random-movie-title {
@@ -148,6 +190,7 @@ nav-links:hover {
 /*********Search Page***********/
 
 .search-header {
+  padding-top: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -155,7 +198,21 @@ nav-links:hover {
   height: 30vh;
 }
 
+.page-link {
+  background: none;
+  border: none;
+}
+
+.page-link:hover {
+  cursor: pointer;
+}
+
+.page-link:active {
+  color: blue;
+}
+
 .search-header h2 {
+  margin-top: 100px;
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-style: italic;
@@ -173,6 +230,7 @@ nav-links:hover {
 .search-bar {
   width: 40%;
   font-size: 20px;
+  margin-bottom: 50px;
   color: white;
   border: none;
   text-align: center;
@@ -186,6 +244,7 @@ nav-links:hover {
 }
 
 .search-results {
+  margin-top: 50px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -217,6 +276,14 @@ nav-links:hover {
   margin-bottom: 20px;
   border-radius: 20px;
   background-color: #6b6b6b;
+  transition: 0.2s;
+}
+
+.movie-card:hover {
+  background-color: #7a7a7a;
+  border: 3px solid #fcffd3;
+  transition: 0.2s;
+  border-radius: 24px;
 }
 
 .movie-card-title {

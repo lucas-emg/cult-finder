@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
-import axios from 'axios'
 import apiMovies from "../utils/apiMovies"
 
 
@@ -32,9 +31,9 @@ const Movie = () => {
     <div className="individual-movie-text">
         <span className="individual-movie-title"><h2>{movie.title}</h2></span>
         <h3><span className="individual-movie-details"><span className="individual-movie-bold">Released:</span> {movie.release_date}</span></h3>
-        <h3><span className="individual-movie-details"><span className="individual-movie-bold">Genres:</span> {movie.genres && movie.genres.map(genre => <span>{genre.name} </span>)}</span></h3>
-        <h3><span className="individual-movie-details"><span className="individual-movie-bold">Production Countries:</span> {movie.production_countries && movie.production_countries.map( country => <span>{country.name} </span>)}</span></h3>
-        <h3><span className="individual-movie-details"><span className="individual-movie-bold">Spoken Languages:</span> {movie.spoken_languages && movie.spoken_languages.map(language => <span>{language.english_name} </span>)}</span>  </h3>
+        <h3><span className="individual-movie-details"><span className="individual-movie-bold">Genres:</span> {movie.genres && movie.genres.map(genre => <span key={genre.name}>{genre.name} </span>)}</span></h3>
+        <h3><span className="individual-movie-details"><span className="individual-movie-bold">Production Countries:</span> {movie.production_countries && movie.production_countries.map( country => <span key={country.name}>{country.name} </span>)}</span></h3>
+        <h3><span className="individual-movie-details"><span className="individual-movie-bold">Spoken Languages:</span> {movie.spoken_languages && movie.spoken_languages.map(language => <span key={language.english_name}>{language.english_name} </span>)}</span>  </h3>
         <span className="individual-movie-details description-margin"><p>{movie.overview}</p></span>
     </div>
     <div className="individual-movie-imdb">
