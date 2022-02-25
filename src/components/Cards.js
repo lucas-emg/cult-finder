@@ -7,9 +7,9 @@ const Cards = ({ poster, title, release, sinopsis }) => {
         <img src={poster} alt="Movie Poster"/>
         
         <div className="movie-card-text">
-        <p><span className="text-bold">Title:</span> {title}</p>
-        <p><span className="text-bold">Release Date:</span> {release}</p>
-        <p><span className="text-bold">Sinopsis:</span> {sinopsis}</p>
+        <p><span className="movie-card-title">Title: {title}</span></p>
+        <p><span className="movie-card-details"><span className="movie-card-details-bold">Release Date:</span> {release}</span></p>
+        <p><span className="movie-card-details"><span className="movie-card-details-bold">Sinopsis:</span> {sinopsis}</span></p>
         </div>
     </div>
   )

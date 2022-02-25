@@ -1,11 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,300;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sarabun&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,300;0,400;1,800;1,100&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
 
 body {
-  background-color: rgb(196, 195, 195);
-  min-height: 100vh;
+  background-color: #2b2b2b;
+  min-height: 120vh;
   width: 100vw;
-  color: black;
+  color: white;
 }
 
 .nav-bar {
@@ -14,23 +18,58 @@ body {
   justify-content: space-between;
   align-items: center;
   font-family: "Oswald", sans-serif;
-  color: white;
+  color: #fcf7ff;
   font-size: 25px;
-  padding: 10px 35px;
-  background: rgba(255, 255, 255, 0.28);
-  border-radius: 0px 0px 16px 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(6.3px);
-  -webkit-backdrop-filter: blur(6.3px);
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  padding: 10px 55px;
+  background-color: #6b6b6b;
+  border-bottom: 1px solid #fcffd3;
 }
 
 .nav-links {
-  color: black;
+  font-family: "Comfortaa", cursive;
+  color: #fcf7ff;
+}
+
+nav-links:hover {
+  color: antiquewhite;
 }
 
 .nav-bar img {
   width: 100px;
+}
+
+/**********Header**********/
+
+.header {
+  margin-top: 60px;
+  margin-bottom: 0px;
+}
+
+.header h1 {
+  font-family: "Comfortaa", cursive;
+  font-weight: 700;
+  font-size: 70px;
+  margin: 30px;
+  text-align: center;
+}
+.header-text {
+  background-image: url("./images/background_header.png");
+  width: 100%;
+  height: 250px;
+  font-size: 35px;
+  background-size: cover;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.header-text p {
+  margin: 2em;
+  color: rgb(49, 46, 54);
+  font-family: "Sarabun", sans-serif;
+  font-weight: 100;
 }
 
 /*********Random Movie***********/
@@ -38,24 +77,39 @@ body {
 .random-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 350px;
+  height: 600px;
+  padding: 70px 0px;
+}
+
+.random-movie-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  width: 100%;
+  height: 300px;
 }
 
 .random-container h2 {
-  margin-bottom: 30px;
+  font-size: 30px;
+  margin-bottom: 0px;
+  font-family: "Comfortaa", cursive;
 }
 
 .random-movie-card {
   display: flex;
-  border: 1px rgb(150, 150, 150) solid;
+  border: 1px solid #fcffd3;
   width: 60%;
   height: 300px;
   border-radius: 20px;
+  color: white;
   overflow: scroll;
-  background-color: rgb(218, 218, 218);
+  background-color: #6b6b6b;
 }
 
 .loading {
@@ -72,6 +126,23 @@ body {
 .random-movie-text {
   margin-left: 30px;
   padding: 20px;
+}
+
+.random-movie-btn {
+  margin-top: -100px;
+}
+
+.random-movie-title {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 25px;
+}
+
+.random-movie-details {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 300;
+  font-size: 17px;
 }
 
 /*********Search Page***********/
@@ -92,8 +163,26 @@ body {
   margin-bottom: 15px;
 }
 
+::placeholder {
+  color: white;
+  text-align: center;
+  font-family: "Sarabun", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
 .search-bar {
   width: 40%;
+  font-size: 20px;
+  color: white;
+  border: none;
+  text-align: center;
+  border-bottom: 1px solid white;
+  background-color: #2b2b2b;
+  padding: 10px;
+}
+
+.search-bar:focus {
+  outline: none;
 }
 
 .search-results {
@@ -106,17 +195,47 @@ body {
 .movie-results {
   width: 40%;
   color: black;
+  min-height: 100%;
+}
+
+.error-message {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 60px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 /************Movie Card*********/
 .movie-card {
   display: flex;
-  border: 1px rgb(150, 150, 150) solid;
+  border: 1px solid #fcffd3;
+  color: white;
   width: 100%;
   height: 200px;
   margin-bottom: 20px;
   border-radius: 20px;
-  background-color: rgb(218, 218, 218);
+  background-color: #6b6b6b;
+}
+
+.movie-card-title {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 20px;
+}
+
+.movie-card-details {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 300;
+  font-size: 17px;
+}
+
+.movie-card-details-bold {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 900;
+  font-size: 17px;
 }
 
 .movie-card img {
@@ -154,4 +273,107 @@ body {
   width: 40px;
   height: 40px;
   border-radius: 5px;
+}
+
+/**************Indivudual Movie Page***********/
+
+.individual-movie-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+  height: 100vh;
+}
+
+.description-margin {
+  margin-top: 30px;
+}
+
+.individual-movie-container img {
+  margin-right: 20px;
+  width: 350px;
+  border-radius: 20px;
+}
+
+.individual-movie-imdb img {
+  width: 100px;
+}
+
+.individual-movie-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 20px;
+  width: 60%;
+  height: 100%;
+}
+
+.individual-movie-title {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.individual-movie-details {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 100;
+  font-size: 22px;
+}
+
+.individual-movie-bold {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+}
+
+.find-more-details {
+  font-family: "Sarabun", sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.individual-movie-imdb {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.individual-movie-imdb img:hover {
+  transition: 1s;
+  filter: invert(0%) sepia(0%) saturate(600%) hue-rotate(0deg) brightness(100%)
+    contrast(100%);
+}
+
+/***********About Us**************/
+
+.about-us-container {
+  display: flex;
+  padding: 0px 50px;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-us-container img {
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+.about-us-imgs {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about-us-text {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }

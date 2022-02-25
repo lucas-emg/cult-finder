@@ -35,7 +35,7 @@ const RandomMovie = () => {
     <h2>Movie suggestion of the day!</h2>
 
     
-    <Link className="random-container" to={"/movie/" + randomMovie.id}>
+    <Link className='random-movie-link' to={"/movie/" + randomMovie.id}>
 
     
     <div className="random-movie-card">
@@ -47,18 +47,18 @@ const RandomMovie = () => {
         : <img src="https://www.prokerala.com/movies/assets/img/no-poster-available.jpg" alt="Movie Poster"/>}
       
       <div className="random-movie-text">
-        <h3><span className="text-bold">Title</span>: {randomMovie.title}</h3>
+        <h3><span className="random-movie-title">{randomMovie.title}</span></h3>
         { randomMovie.overview
-          ? <p><span className="text-bold">Sinopsis</span>: {randomMovie.overview}</p>
-          : <p><span className="text-bold">Sinopsis</span>: No sinopsis available</p>}
+          ? <p className='random-movie-details'><span className="text-bold">Sinopsis</span>: {randomMovie.overview}</p>
+          : <p className='random-movie-details'><span className="text-bold">Sinopsis</span>: No sinopsis available</p>}
         { randomMovie.release_date
-          ? <p><span className="text-bold">Release</span>: {randomMovie.release_date}</p>
-          : <p><span className="text-bold">Release</span>: No release date available</p>}
+          ? <p className='random-movie-details'><span className="text-bold">Release</span>: {randomMovie.release_date}</p>
+          : <p className='random-movie-details'><span className="text-bold">Release</span>: No release date available</p>}
       </div></>
     }
     </div>
     </Link>
-    <Button onClick={handleRandomMovie} variant="contained">Get a new suggestion!</Button>
+    <Button className="random-movie-btn" onClick={handleRandomMovie} variant="outlined">Get a new suggestion!</Button>
       
     </div>
   )

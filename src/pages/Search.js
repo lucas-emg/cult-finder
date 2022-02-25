@@ -11,7 +11,7 @@ const Search = () => {
   const [searchTerm, setSearchTerm] = useState(apiMovies.randomLetter());
   const [movies, setMovies] = useState([])
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostsPerPage] = useState(6);
+  const [postsPerPage] = useState(6);
   const indexOfLastPost = currentPage * postsPerPage;
   const indextOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = movies && movies.slice(indextOfFirstPost, indexOfLastPost)
@@ -45,19 +45,21 @@ const Search = () => {
       <div className="search-header">
 
         <h2>Find the movie you'd like to watch</h2>
-        
-        <TextField onChange={e => {setSearchTerm(e.target.value)}} type="text"className="search-bar" id="standard-basic" label="Search your movie" variant="standard" />
+
+        <input className="search-bar" onChange={e => {setSearchTerm(e.target.value)}} placeholder="Search for your movie"></input>
+ 
+        {/* <TextField color="warning" onChange={e => {setSearchTerm(e.target.value)}} type="text" className="search-bar" id="standard-basic" label="Search your movie" variant="standard" /> */}
       </div>
 
       {searchTerm ?
       <div className="search-results">
 
         {currentPosts.map((movie) => {
-          return <Link className="movie-results" to={"/movie/" + movie.id}><Cards key={movie.id} poster={"https://image.tmdb.org/t/p/w780/" + movie.poster_path} title={movie.title} release={movie.release_date} sinopsis={movie.overview} /></Link>
+          return <Link className="movie-results" to={"/movie/" + movie.id}><Cards key={movie.poster_path} poster={"https://image.tmdb.org/t/p/w780/" + movie.poster_path} title={movie.title} release={movie.release_date} sinopsis={movie.overview} /></Link>
         })}
         
       </div>
-      : <p>Please search your movie</p>}
+      : <p className='error-message'>Please search a movie</p>}
 
       <Pagination key={paginate} postsPerPage={postsPerPage} totalPosts={movies.length} paginate={paginate} />
     </div>

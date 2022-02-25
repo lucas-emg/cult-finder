@@ -24,21 +24,22 @@ const Movie = () => {
    
 
   return (
-  <div style={{display: 'flex'}}>
+  <div className="individual-movie-container">
     
-    <div>
-        <img style={{width: "200px"}} src={"https://image.tmdb.org/t/p/w780/"+ movie.poster_path} alt=""/>
+    
+        <img src={"https://image.tmdb.org/t/p/w780/"+ movie.poster_path} alt=""/>
+  
+    <div className="individual-movie-text">
+        <span className="individual-movie-title"><h2>{movie.title}</h2></span>
+        <h3><span className="individual-movie-details"><span className="individual-movie-bold">Released:</span> {movie.release_date}</span></h3>
+        <h3><span className="individual-movie-details"><span className="individual-movie-bold">Genres:</span> {movie.genres && movie.genres.map(genre => <span>{genre.name} </span>)}</span></h3>
+        <h3><span className="individual-movie-details"><span className="individual-movie-bold">Production Countries:</span> {movie.production_countries && movie.production_countries.map( country => <span>{country.name} </span>)}</span></h3>
+        <h3><span className="individual-movie-details"><span className="individual-movie-bold">Spoken Languages:</span> {movie.spoken_languages && movie.spoken_languages.map(language => <span>{language.english_name} </span>)}</span>  </h3>
+        <span className="individual-movie-details description-margin"><p>{movie.overview}</p></span>
     </div>
-    <div>
-        <h2>{movie.title}</h2>
-        <h3>Released: {movie.release_date}</h3>
-        <h3>Genres: {movie.genres && movie.genres.map(genre => <span>{genre.name} </span>)}</h3>
-        <h3>Production Countries: {movie.production_countries && movie.production_countries.map( country => <span>{country.name} </span>)}</h3>
-        <h3>Spoken Languages: {movie.spoken_languages && movie.spoken_languages.map(language => <span>{language.english_name} </span>)}</h3>
-        <p>{movie.overview}</p>
-    </div>
-    <div>
-        <a target="_blank" href={`https://www.imdb.com/title/${movie.imdb_id}`} rel="noopener noreferrer"><img style={{width:"100px"}} src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/IMDb_Logo_Square.svg/2048px-IMDb_Logo_Square.svg.png" alt=""/></a>
+    <div className="individual-movie-imdb">
+        <h2 className="find-more-details">Find more details on:</h2>
+        <a target="_blank" href={`https://www.imdb.com/title/${movie.imdb_id}`} rel="noopener noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/IMDb_Logo_Square.svg/2048px-IMDb_Logo_Square.svg.png" alt=""/></a>
     </div>
   </div>
   );

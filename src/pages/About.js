@@ -1,26 +1,30 @@
 import React from "react";
 import logo from "../images/logo_tmdb.svg"
+import ironhack from "../images/ironhack_logo.png"
 
 const About = () => {
   return (
-    <div>
-      <h1>About Us</h1>
-      <div>
+    <div >
+      <div className="about-us-container"> 
 
-        {/* <img src="" alt=""/> This will be ironhack image*/}
+        <div className="about-us-imgs">
         
-        <img src={logo} alt="logo_tmdb"/>
+          <img src={logo} alt="logo_tmdb"/>
+          <img src={ironhack} alt="logo_ironhack"/>
 
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam auctor
-          odio at convallis ornare. Suspendisse venenatis turpis magna, vitae
-          gravida elit feugiat nec. Suspendisse fringilla augue vitae tempor
-          condimentum. Nam auctor consequat tellus, non facilisis massa dictum
-          sit amet. Proin dignissim lacus id hendrerit semper. Vivamus in
-          venenatis justo. Donec posuere venenatis turpis. Vivamus velit eros,
-          porta et malesuada sed, bibendum luctus ligula. Vivamus vehicula ante
-          a pulvinar scelerisque. Vivamus venenatis laoreet egestas.
+        </div>
+
+        <div className="about-us-text">
+
+        <h1 className="individual-movie-title">About Us</h1>
+        <p className="individual-movie-details">
+          This project was created by Lucas Mendes Gabriel and Erico Silva as the Module 2 of the Irohack Web Development
+          Bootcamp. The idea of the project is to provide users with a library of movies, with information about the movies they are
+          looking for, as well as providing them with a randomic suggestion. The entire project uses the TMDB API, which has served
+          our student needs greatly!
         </p>
+
+        </div>
 
       </div>
   
