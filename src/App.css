@@ -54,6 +54,11 @@ body {
   width: 100px;
 }
 
+.nav-links img {
+  width: 18px;
+  margin-left: 10px;
+}
+
 /**********Header**********/
 
 .header {
@@ -247,6 +252,7 @@ body {
   margin-top: 50px;
   display: flex;
   flex-direction: row;
+  min-height: 90vh;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
@@ -311,6 +317,7 @@ body {
 }
 
 .movie-card-text {
+  width: 80%;
   margin-left: 20px;
   padding: 15px;
   overflow: hidden;
@@ -342,6 +349,36 @@ body {
   border-radius: 5px;
 }
 
+.pagination-clicked {
+  background-color: #2e314d;
+  color: rgb(241, 241, 241);
+  display: inline-block;
+  margin: 0px 5px;
+  padding: 7px;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.pagination li:hover {
+  background-color: rgb(197, 197, 197);
+}
+
+.pagination li:focus {
+  background-color: rgb(71, 71, 71);
+}
+
+.loading {
+  width: 100px;
+}
+
+.loading-random {
+  display: flex;
+  height: 70px;
+  width: 70px;
+  align-self: center;
+  margin: 0 auto;
+}
 /**************Indivudual Movie Page***********/
 
 .individual-movie-container {
@@ -362,9 +399,11 @@ body {
   margin-right: 20px;
   width: 350px;
   border-radius: 20px;
+  border: 2px solid #f9ff9e;
 }
 
 .individual-movie-imdb img {
+  border: none;
   width: 100px;
 }
 

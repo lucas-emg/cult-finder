@@ -8,6 +8,7 @@ import About from './pages/About';
 import Movie from './pages/Movie';
 
 function App() {
+  
   return (
     <div className="App">
     <Navbar/>
