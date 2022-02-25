@@ -1,8 +1,13 @@
-import React from "react";
+import { useEffect } from "react";
 import logo from "../images/logo_tmdb.svg"
 import ironhack from "../images/ironhack_logo.png"
 
 const About = () => {
+
+    useEffect(() => {
+      window.scrollTo(0, 0)
+    }, [])
+
   return (
     <div >
       <div className="about-us-container"> 

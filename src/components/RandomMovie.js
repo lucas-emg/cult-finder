@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import apiMovies from '../utils/apiMovies'
-import Button from '@mui/material/Button';
-import CircularProgress from '@mui/material/CircularProgress';
+import loadingWheel from "../images/h6viz.gif"
 
 const RandomMovie = () => {
 
@@ -40,7 +39,7 @@ const RandomMovie = () => {
     
     <div className="random-movie-card">
     {loading
-    ? <CircularProgress className="loading" />
+    ? <div className='loading-random'><img src={loadingWheel} alt="Loading Wheel"/></div>
       : <>
       { randomMovie.poster_path
         ? <img src={"https://image.tmdb.org/t/p/w780/" + randomMovie.poster_path} alt="Movie Poster"/>
