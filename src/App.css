@@ -130,7 +130,7 @@ body {
   height: 300px;
   border-radius: 20px;
   color: white;
-  overflow: scroll;
+  overflow: hidden;
   background-color: #6b6b6b;
   transition: 0.2s;
 }
