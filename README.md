@@ -3,6 +3,8 @@
 
 FlickPedia is an app capable to suggest movies and give you some information about it. TMDB is a collaborator in the project, we use its database.
 
+[Click here to see the deployed project](https://thirsty-goldstine-dfff85.netlify.app/)
+
 ## Home page
 
 - Gives the user a movie randomly as a suggestion
